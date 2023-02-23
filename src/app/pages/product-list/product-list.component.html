@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="main-container">
+<div class="product-cont">
+ <div class="card" style="width: 18rem;" *ngFor="let product of products">
+ <a routerLink="/products/{{product.id}}"><img src="{{product.image}}" class="card-img-top" alt="image"></a>
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <h5 class="card-text">₹ {{product.price}}</h5>
+    <div class="button-cont">
+    <button  class="btn btn-outline-dark w-100  add" *ngIf="checkInCart(product)=== false" (click)="addTocart(product)">Add To Cart</button>
+    <button  class="btn btn-outline dark w-100 added" *ngIf="checkInCart(product)=== true">Added To Cart</button>
+   </div>
+  </div>
+</div>
+</div>
+</div>
